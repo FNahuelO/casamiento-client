@@ -1,10 +1,50 @@
-import React, { useState, useCallback } from "react";
-import { GoogleMapsProvider } from "@ubilabs/google-maps-react-hooks";
-import MapMarkers from "./Marker";
+import React, { useState, useCallback, useEffect } from "react";
+import {
+  GoogleMapsProvider,
+  useGoogleMap,
+} from "@ubilabs/google-maps-react-hooks";
 
 const mapOptions = {
   zoom: 17,
   center: { lat: -34.497586, lng: -58.772302 },
+};
+
+const MapMarkers = () => {
+  // Get the global map instance with the useGoogleMap hook
+  const map = useGoogleMap();
+
+  const [, setMarkers] = useState([]);
+
+  // Add markers to the map
+  useEffect(() => {
+    if (!map) {
+      return () => {};
+    }
+
+    const initialBounds = new window.google.maps.LatLngBounds();
+
+    const markerOptions = {
+      map,
+      position: { lat: -34.49755, lng: -58.772539 },
+      title: "Quinta",
+      clickable: false,
+    };
+
+    initialBounds.extend({ lat: -34.49755, lng: -58.772539 });
+    const markers = new window.google.maps.Marker(markerOptions);
+
+    // Set the center of the map to fit markers
+    map.setCenter(initialBounds.getCenter());
+
+    setMarkers(markers);
+
+    // Clean up markers
+    return () => {
+      markers.setMap(null);
+    };
+  }, [map]);
+
+  return null;
 };
 
 const Mapa = () => {
@@ -17,7 +57,7 @@ const Mapa = () => {
 
   return (
     <GoogleMapsProvider
-      googleMapsAPIKey="AIzaSyBOTDRH4UBts12zl5WD64rzYXSWHTtjHOI"
+      googleMapsAPIKey="AIzaSyDeMnNMQjy5nc9jMYT04evh28gCB_E0A_g"
       mapContainer={mapContainer}
       mapOptions={mapOptions}
       onLoadScript={() => {
