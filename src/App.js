@@ -53,6 +53,11 @@ function App() {
       return;
     }
 
+    if (datos?.invitado?.assist === "false") {
+      setConfirm(true);
+      return;
+    }
+
     // Verifica si no se han seleccionado bebidas ni música
     if (!datos?.bebidas && !datos?.musica) {
       setError({
