@@ -13,10 +13,12 @@ export const fetchBebidas = async () => {
 export const fetchInvitados = async () => {
   try {
     const { data } = await getInvitados();
-    const newArray = data.map(({ id, name, assist }) => ({
+    const newArray = data.map(({ id, name, assist, bebida, music }) => ({
       id,
       name,
       assist,
+      music,
+      bebida,
     }));
 
     newArray.sort((a, b) => a.name.localeCompare(b.name));
