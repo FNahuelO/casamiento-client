@@ -10,11 +10,4 @@ const config = {
   ],
 };
 
-const initApiCalendar = async () => {
-  const apiCalendar = new ApiCalendar(config);
-  await apiCalendar.handleAuthClick(); // Realiza la autorización
-
-  return apiCalendar;
-};
-
-export default initApiCalendar;
+export const apiCalendar = new ApiCalendar(config);

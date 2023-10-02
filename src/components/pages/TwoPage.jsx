@@ -6,7 +6,7 @@ import Corazon from "../../style/assets/Corazon";
 import { Container } from "../../style/Container";
 import { Text } from "../../style/Text";
 import { Button } from "../../style/Buttons";
-import apiCalendar from "../../config/calendar";
+import { apiCalendar } from "../../config/calendar";
 
 export default function TwoPage({ change, error }) {
   const data = [
@@ -37,15 +37,15 @@ export default function TwoPage({ change, error }) {
         timeZone: "America/Buenos_Aires",
       },
     };
-    let api;
-    apiCalendar.then((response) => {
-      console.log(response);
-      api = response;
-    });
+
     try {
-      const { result } = await api.createEvent(event);
-      if (result?.status === "confirmed") {
-        change({ view: true, type: "confirm" });
+      await apiCalendar.handleAuthClick();
+      console.log("CALENDAR ->", apiCalendar);
+      if (apiCalendar) {
+        const { result } = await apiCalendar.createEvent(event);
+        if (result?.status === "confirmed") {
+          change({ view: true, type: "confirm" });
+        }
       }
     } catch (_error) {
       console.log(_error);
