@@ -40,7 +40,7 @@ export default function TwoPage({ change, error }) {
 
     try {
       await apiCalendar.handleAuthClick();
-      console.log("CALENDAR ->", apiCalendar);
+      console.log("CALENDAR ->", apiCalendar.listEvents());
       const { result } = await apiCalendar.createEvent(event);
       if (result?.status === "confirmed") {
         change({ view: true, type: "confirm" });
