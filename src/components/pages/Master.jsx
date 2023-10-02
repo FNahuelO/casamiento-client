@@ -116,7 +116,7 @@ export default function Master() {
                 <Text>No se registra información</Text>
               )}
             </Container>
-            <Container width="100%" justify="center">
+            <Container width="100%">
               <Text padding={selected?.assist ? "0" : "1rem"}>
                 {handleAssist(selected?.assist)}
               </Text>
