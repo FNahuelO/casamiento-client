@@ -117,6 +117,7 @@ export default function Confirm() {
                 background: "none",
                 textAlign: "center",
                 outline: "none",
+                touchAction: "manipulation",
               }}
             />
             {results.length > 0 && view ? (
