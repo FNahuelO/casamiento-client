@@ -1,51 +1,14 @@
-import React, { useState, useCallback, useEffect } from "react";
-import {
-  GoogleMapsProvider,
-  useGoogleMap,
-} from "@ubilabs/google-maps-react-hooks";
+import React, { useState, useCallback } from "react";
+import { MoonLoader } from "react-spinners";
+import { GoogleMapsProvider } from "@ubilabs/google-maps-react-hooks";
+import MapMarkers from "./Marker";
 
 const mapOptions = {
   zoom: 17,
   center: { lat: -34.497586, lng: -58.772302 },
 };
 
-const MapMarkers = () => {
-  // Get the global map instance with the useGoogleMap hook
-  const map = useGoogleMap();
-
-  const [, setMarkers] = useState([]);
-
-  // Add markers to the map
-  useEffect(() => {
-    if (!map) {
-      return () => {};
-    }
-
-    const initialBounds = new window.google.maps.LatLngBounds();
-
-    const markerOptions = {
-      map,
-      position: { lat: -34.49755, lng: -58.772539 },
-      title: "Quinta",
-      clickable: false,
-    };
-
-    initialBounds.extend({ lat: -34.49755, lng: -58.772539 });
-    const markers = new window.google.maps.Marker(markerOptions);
-
-    // Set the center of the map to fit markers
-    map.setCenter(initialBounds.getCenter());
-
-    setMarkers(markers);
-
-    // Clean up markers
-    return () => {
-      markers.setMap(null);
-    };
-  }, [map]);
-
-  return null;
-};
+const API_KEY = process.env.REACT_APP_MAPS_KEY;
 
 const Mapa = () => {
   const [loading, setLoading] = useState(true);
@@ -57,7 +20,7 @@ const Mapa = () => {
 
   return (
     <GoogleMapsProvider
-      googleMapsAPIKey="AIzaSyDeMnNMQjy5nc9jMYT04evh28gCB_E0A_g"
+      googleMapsAPIKey={API_KEY}
       mapContainer={mapContainer}
       mapOptions={mapOptions}
       onLoadScript={() => {
@@ -75,7 +38,7 @@ const Mapa = () => {
             <MapMarkers />
           </div>
         ) : (
-          <h1>LOADING</h1>
+          <MoonLoader />
         )}
       </React.StrictMode>
     </GoogleMapsProvider>

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Container } from "../Container";
 import { Text } from "../Text";
 import Corazon from "./Corazon";
+import vector from "./flores.svg";
 
 const CountdownTimer = () => {
   const calculateTimeLeft = () => {
@@ -52,21 +53,32 @@ const CountdownTimer = () => {
 
   return (
     <Container
-      width="18rem"
-      height="18rem"
-      flex="column"
+      bgImg={vector}
+      bgSize="cover"
+      bgRepeat="no-repeat"
+      bgPosition="center"
+      width="20rem"
+      height="20rem"
       align="center"
       justify="center"
-      radius="50%"
-      bg="white"
     >
-      <Text color="#D28A58" size="2.5rem">
-        Falta
-      </Text>
-      <Container padding="1rem 0 2rem 0">
-        {Object.keys(timeLeft).map((key, idx) => handleComponents(key, idx))}
+      <Container
+        width="16rem"
+        height="16rem"
+        flex="column"
+        align="center"
+        justify="center"
+        radius="50%"
+        bg="white"
+      >
+        <Text color="#D28A58" size="2.5rem">
+          Falta
+        </Text>
+        <Container padding="1rem 0 2rem 0">
+          {Object.keys(timeLeft).map((key, idx) => handleComponents(key, idx))}
+        </Container>
+        <Corazon />
       </Container>
-      <Corazon />
     </Container>
   );
 };

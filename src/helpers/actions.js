@@ -1,7 +1,7 @@
 import { baseURl } from "../axios";
 import axios from "axios";
 
-const API_KEY = "AIzaSyBOTDRH4UBts12zl5WD64rzYXSWHTtjHOI";
+const API_KEY = process.env.REACT_APP_GOOGLE_KEY;
 
 export const getInvitados = async () => {
   try {

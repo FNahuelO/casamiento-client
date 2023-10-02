@@ -102,7 +102,7 @@ export const Wrapper = styled.div`
 `;
 
 export const SideVector = styled.div`
-  position: fixed;
+  position: absolute;
   top: ${({ top }) => top || null};
   bottom: ${({ bottom }) => bottom || null};
   right: ${({ right }) => right || null};

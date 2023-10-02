@@ -2,18 +2,21 @@ import { useGoogleMap } from "@ubilabs/google-maps-react-hooks";
 import { useState, useEffect } from "react";
 
 const MapMarkers = () => {
-  // Get the global map instance with the useGoogleMap hook
   const map = useGoogleMap();
-
   const [, setMarkers] = useState([]);
 
-  // Add markers to the map
+  // Función de manejo de errores personalizada
+  const handleError = (error) => {
+    // Aquí puedes realizar acciones específicas cuando se produce un error
+    console.error("Error:", error);
+    // Puedes mostrar un mensaje de error al usuario si es necesario
+    // o realizar otras acciones de recuperación.
+  };
+
   useEffect(() => {
     if (!map) {
-      return () => {};
+      return;
     }
-
-    const initialBounds = new window.google.maps.LatLngBounds();
 
     const markerOptions = {
       map,
@@ -22,17 +25,24 @@ const MapMarkers = () => {
       clickable: false,
     };
 
-    initialBounds.extend({ lat: -34.49755, lng: -58.772539 });
-    const markers = new window.google.maps.Marker(markerOptions);
+    const marker = new window.google.maps.Marker(markerOptions);
 
-    // Set the center of the map to fit markers
-    map.setCenter(initialBounds.getCenter());
+    // Agregar el marcador a la lista de marcadores
+    setMarkers((prevMarkers) => [...prevMarkers, marker]);
 
-    setMarkers(markers);
+    // Lidiar con errores
+    marker.addListener("click", () => {
+      try {
+        // Coloca aquí el código que podría generar un error
+      } catch (error) {
+        // Llama a la función de manejo de errores personalizada
+        handleError(error);
+      }
+    });
 
-    // Clean up markers
+    // Limpieza de marcadores
     return () => {
-      markers.setMap(null);
+      marker.setMap(null);
     };
   }, [map]);
 

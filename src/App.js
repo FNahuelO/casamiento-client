@@ -10,16 +10,12 @@ import { useDataStore } from "./helpers/context";
 import ErrorModal from "./components/modal/Error";
 import { FixedButton } from "./style/Buttons";
 import Send from "./components/modal/Send";
-import { SideVector } from "./style/Container";
-import Flor1 from "./style/assets/Flor1";
-import Flor2 from "./style/assets/Flor2";
 
 function App() {
   const [view, setView] = useState({ view: false });
   const [error, setError] = useState(false);
   const { datos } = useDataStore();
   const [confirm, setConfirm] = useState(false);
-  const [showVector, setShowVector] = useState(true);
   const [style, setStyle] = useState({
     width: "2rem",
     right: "1rem",
@@ -27,16 +23,6 @@ function App() {
     radius: "50%",
     opacity: "0.5",
   });
-
-  useEffect(() => {
-    // Después de 3 segundos, oculta el elemento
-    const timeoutId = setTimeout(() => {
-      setShowVector(false);
-    }, 4000); // Cambia 3000 a la cantidad de tiempo en milisegundos que desees
-
-    // Limpia el timeout cuando el componente se desmonta
-    return () => clearTimeout(timeoutId);
-  }, []);
 
   useEffect(() => {
     if (datos?.invitado?.assist === "false") {
@@ -91,16 +77,6 @@ function App() {
 
   return (
     <React.Fragment>
-      {showVector && (
-        <>
-          <SideVector left="0" bottom="0" direction="left">
-            <Flor1 width="150" height="100" />
-          </SideVector>
-          <SideVector right="0" top="0">
-            <Flor2 width="150" height="100" />
-          </SideVector>
-        </>
-      )}
       <OnePage />
       <TwoPage change={setView} error={setError} />
 

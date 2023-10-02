@@ -1,8 +1,10 @@
 import React from "react";
-import { Container } from "../../style/Container";
+import { Container, SideVector } from "../../style/Container";
 import { Text, HR } from "../../style/Text";
 import picture from "../../style/assets/backgraound-1.png";
 import Comillas from "../../style/assets/Comillas";
+import Flor1 from "../../style/assets/Flor1";
+import Flor2 from "../../style/assets/Flor2";
 
 export default function OnePage() {
   return (
@@ -14,6 +16,14 @@ export default function OnePage() {
       height="100vh"
       bgSize="cover"
     >
+      <>
+        <SideVector left="0" bottom="0" direction="left">
+          <Flor1 width="150" height="100" />
+        </SideVector>
+        <SideVector right="0" top="0">
+          <Flor2 width="150" height="100" />
+        </SideVector>
+      </>
       <Container
         width="100%"
         height="100%"
