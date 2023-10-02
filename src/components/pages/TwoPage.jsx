@@ -37,10 +37,12 @@ export default function TwoPage({ change, error }) {
         timeZone: "America/Buenos_Aires",
       },
     };
-
+    let api;
+    apiCalendar.then((response) => {
+      console.log(response);
+      api = response;
+    });
     try {
-      const api = await apiCalendar();
-      console.log("CALENDAR ->", api);
       const { result } = await api.createEvent(event);
       if (result?.status === "confirmed") {
         change({ view: true, type: "confirm" });
