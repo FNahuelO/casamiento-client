@@ -24,19 +24,20 @@ export default function TwoPage({ change, error }) {
       button: "¿COMO LLEGAR?",
     },
   ];
-  const event = {
-    summary: "Casamiento Cris & Flor",
-    start: {
-      dateTime: new Date("2023-11-18T21:00:00Z").toISOString(),
-      timeZone: "America/Buenos_Aires",
-    },
-    end: {
-      dateTime: new Date("2023-11-19T08:00:00Z").toISOString(),
-      timeZone: "America/Buenos_Aires",
-    },
-  };
 
   const handleClick = async () => {
+    const event = {
+      summary: "Casamiento Cris & Flor",
+      start: {
+        dateTime: new Date("2023-11-18T21:00:00Z").toISOString(),
+        timeZone: "America/Buenos_Aires",
+      },
+      end: {
+        dateTime: new Date("2023-11-19T08:00:00Z").toISOString(),
+        timeZone: "America/Buenos_Aires",
+      },
+    };
+
     try {
       await apiCalendar.handleAuthClick();
       console.log("CALENDAR ->", apiCalendar);
