@@ -17,7 +17,7 @@ export default function OnePage() {
       bgSize="cover"
     >
       <>
-        <SideVector left="0" bottom="1.5rem" direction="left">
+        <SideVector left="0" bottom="1rem" direction="left">
           <Flor1 width="150" height="100" />
         </SideVector>
         <SideVector right="0" top="0">

@@ -44,6 +44,7 @@ export default function TwoPage({ change, error }) {
         change({ view: true, type: "confirm" });
       }
     } catch (_error) {
+      console.log(_error);
       error({
         view: true,
         msg: "Debes iniciar sesión para agendar el evento.",
