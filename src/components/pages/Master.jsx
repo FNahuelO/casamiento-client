@@ -65,8 +65,14 @@ export default function Master() {
         </select>
       </Container>
       {loading.view ? (
-        <Container border="1px solid" width="90%">
-          <Container flex="column">
+        <Container
+          border="1px solid"
+          width="90%"
+          padding=".5rem"
+          radius="1rem"
+          bg="white"
+        >
+          <Container flex="column" justify="space-around">
             {["Bebidas", "Música", "Asistir"].map((item, idx) => (
               <Text padding="1rem" key={idx}>
                 {item}
@@ -111,7 +117,9 @@ export default function Master() {
               )}
             </Container>
             <Container width="100%" justify="center">
-              <Text padding="1rem">{handleAssist(selected?.assist)}</Text>
+              <Text padding={selected?.assist ? "0" : "1rem"}>
+                {handleAssist(selected?.assist)}
+              </Text>
             </Container>
           </Container>
         </Container>
