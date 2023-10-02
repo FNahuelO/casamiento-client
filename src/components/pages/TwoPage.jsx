@@ -61,6 +61,8 @@ export default function TwoPage({ change, error }) {
       transform="translate(0, -2.5rem)"
       radius="2rem 2rem 0 0"
       gap="1rem"
+      position="relative"
+      zIndex="3"
     >
       <CountdownTimer />
 
