@@ -52,7 +52,7 @@ export default function Send({ datos, close }) {
                 <Container gap=".5rem">
                   <Text size="1.2rem">{datos?.bebidas[0]} </Text>
                   {datos?.bebidas[1] && (
-                    <Text size="1.2rem">y {datos?.bebidas[0]}</Text>
+                    <Text size="1.2rem">y {datos?.bebidas[1]}</Text>
                   )}
                 </Container>
               </Container>
