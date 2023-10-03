@@ -17,7 +17,14 @@ export default function Confirm() {
   const { agregarDato } = useDataStore();
 
   useEffect(() => {
-    fetchInvitados().then((response) => setList(response));
+    fetchInvitados().then((response) => {
+      const newArray = response.map(({ id, name, assist }) => ({
+        id,
+        name,
+        assist,
+      }));
+      setList(newArray);
+    });
   }, []);
 
   const handleChange = (e) => {
