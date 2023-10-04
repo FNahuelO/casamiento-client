@@ -10,7 +10,6 @@ export default function OnePage() {
   return (
     <Container
       bgImg={picture}
-      bgAttachment="fixed"
       width="100%"
       justify="center"
       height="100vh"
