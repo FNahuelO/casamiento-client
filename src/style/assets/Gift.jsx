@@ -1,47 +1,19 @@
 import React from "react";
 
-export default function Gift({ width, height, color }) {
+export default function Gift({ width, height }) {
   return (
     <svg
-      width={width || "100"}
-      height={height || "100"}
-      viewBox="0 0 24 24"
+      width={width || "50"}
+      height={height || "50"}
+      viewBox="0 0 50 73"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <path
-        d="M3 9.5C3 9.03534 3 8.80302 3.03843 8.60982C3.19624 7.81644 3.81644 7.19624 4.60982 7.03843C4.80302 7 5.03534 7 5.5 7H12H18.5C18.9647 7 19.197 7 19.3902 7.03843C20.1836 7.19624 20.8038 7.81644 20.9616 8.60982C21 8.80302 21 9.03534 21 9.5V9.5V9.5C21 9.96466 21 10.197 20.9616 10.3902C20.8038 11.1836 20.1836 11.8038 19.3902 11.9616C19.197 12 18.9647 12 18.5 12H12H5.5C5.03534 12 4.80302 12 4.60982 11.9616C3.81644 11.8038 3.19624 11.1836 3.03843 10.3902C3 10.197 3 9.96466 3 9.5V9.5V9.5Z"
-        stroke={color}
-        strokeWidth="2"
-        strokeLinejoin="round"
-      />
-      <path
-        d="M4 12V16C4 17.8856 4 18.8284 4.58579 19.4142C5.17157 20 6.11438 20 8 20H9H15H16C17.8856 20 18.8284 20 19.4142 19.4142C20 18.8284 20 17.8856 20 16V12"
-        stroke={color}
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-      <path
-        d="M12 7V20"
-        stroke={color}
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-      <path
-        d="M11.3753 6.21913L9.3959 3.74487C8.65125 2.81406 7.26102 2.73898 6.41813 3.58187C5.1582 4.8418 6.04662 7 7.82843 7L11 7C11.403 7 11.6271 6.53383 11.3753 6.21913Z"
-        stroke={color}
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-      <path
-        d="M12.6247 6.21913L14.6041 3.74487C15.3488 2.81406 16.739 2.73898 17.5819 3.58187C18.8418 4.8418 17.9534 7 16.1716 7L13 7C12.597 7 12.3729 6.53383 12.6247 6.21913Z"
-        stroke={color}
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
+      <image
+        id="image0_342_109"
+        width={width || "50"}
+        height={height || "50"}
+        xlinkHref="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFoAAABaCAYAAAA4qEECAAAACXBIWXMAAAsTAAALEwEAmpwYAAAE4ElEQVR4nO2dW2tcVRTHN3griAURilXx/uYFr2D1SVHfBEX6FXyqldYXK4W91yQmmbUmwTNrJSVV7LMBL19AfNKqILWoKKh4LXgt2nijrY6sM0OJ6ZzJJD3n7Mns9YdFwuRc1vnlP+vsOdl7xTmTyWRKT17wtiBEgfG9wHQ8MJ4GoWPAeBiYGg2evSV2jptafoG2BaFXQagzKALjvyC0NNGm62LnvOkE3HoIGH9YC/L/gdNx38YHY+c+EoL55v3AdBAEPwmCvwfBP4HxMxB8SX+Wb8O4I399HZBXuPtk0rAnMrwBBN9YGxa+CYw/bQTyimP84g9MX+tSk59v3RuEfj43eOt29ssuNSeHMiAzLgemfXrDW1xcvEC/gjSf1fJTdIP0C3SzS0UwVLlYG3JjoXVnv+N7bt5VBBuYgktBvk0PlFMGaN+g84DQ/r77Cb3tUhDko4u+TvsrCO3xgpdPLs5tB8a9+loR6LXGx90bbd99j7kUFJg+LXDanrO2FXq6CPTS0tJ5g86TZdlF/c+Df7sUFJhO9AOgTl69be7sAtBrnafI0YHxK5cy6MnFue39tt8o6KIarWNyl4IC00cFo4i9ZYGGebobmP4oAP2MS0GBkYtuhgp7tbOHBa01u1cu9hdDpn/88zNXu1GVP+S3BG49BULvFo5PxziCPn9hfAeEdutNthrI2cxVwHQ09sXCiEQQ/ECZlAv5kN9ikKkv7FKd3SsX0V0EIxiB8cnSQGtNjn1BMKrBeLg80IzL0S9IRjQYl8sDHftiZLTDQIuB7sR2oTla4oOz0iHxoVqNljEAbTKZTCaTyVS/Yo9ZYUTCQIuB7sR2oTla4oOz0iHxoVqNFgMd3XFgjqbokKx0SHyAY1+jg9CPIDjls9l7dLGmTkzxMnsjMD4WmF4HoVNn7cN4EgRf021023yfBdqmS+T0WN1jGujOCgjt5ovNSwb9gj037wDGD8/sw3S0kbVuH7hPlm0FITFHSw5t17DvJiK6WNeeAONb+v2w++lsotRLR3u9559emL5UYwN5l+psV7XKrMk+y7a6mqSlKQh+nxxoEJxyNSswTacHmnFH5cmuzr2N9yUHeoqnLnM1Kx/6pQbae3+hq1l6zvRAZyUvSxhCukAoOdDA+Hjlya7OnXFniqBfcTWr91E+LdCB8bRfmLve1STtOtPrIJYWaOjCzlzsBaQpgAahU0VNTUrvjZc/6UsXdEfX6ml7nqry9d6fD0Lvl523q1plJwwaTI2q8g2Mz1WRs6taVSQdtNsi486yc/Xt1qO9To4GGs7AphMNmbmpLMjak7TK9ZGualWVOHSd/V0ZPUR7nwC/rjJXV7WqTB66z6k/L+pCM4w8N68Axi+qztNVraovAPLAjzcCe/LA7JXa17SOHN14gCYdiXypnWSGzWtC6Jpuw9h68hur+dGB8ZthGm37ebwVhL6tM7exAg25s3EZ5umRAZAfDky/1p3X+IGW7gMo7WO0OpcGt57oN7HGQMu5upsO6vBPIwi+EAPwWDsaRjAMtBjoTmwXbi5HW3+lDgj+VkfpsI5hXGJnsAGgd8d+20L8GHoG7Ialk731ryIjcLGdKMF0pLbJPzr5JUnYTEf0wZWrU7mzdYJ3/s+/xrgBIeNyPvldaFeMaWwmk8lkMplMJpPJ5KrWf7VH9S0Jwdj+AAAAAElFTkSuQmCC"
       />
     </svg>
   );

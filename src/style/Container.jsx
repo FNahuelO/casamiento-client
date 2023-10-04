@@ -109,6 +109,7 @@ export const SideVector = styled.div`
   left: ${({ left }) => left || null};
   width: ${({ width }) => width || null};
   transform: ${({ transform }) => transform || null};
+  overflow: visible;
 
   z-index: 2;
   animation: ${({ direction }) =>

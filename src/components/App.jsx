@@ -84,12 +84,7 @@ function App() {
 
       <Five />
       <FourPage />
-      <hr
-        style={{
-          margin: 0,
-          border: ".5rem solid #D28A58",
-        }}
-      />
+     
       <FixedButton
         position="fixed"
         bottom="3rem"

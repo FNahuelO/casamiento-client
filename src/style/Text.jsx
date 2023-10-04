@@ -45,6 +45,7 @@ export const Text = styled.span`
   text-wrap: ${({ textWrap }) => textWrap || null};
   opacity: ${({ opacity }) => opacity || null};
   transform: ${({ transform }) => transform || null};
+  text-shadow: ${({ textShadow }) => textShadow || null};
 `;
 export const Required = styled.span`
   width: ${({ width }) => width || null};

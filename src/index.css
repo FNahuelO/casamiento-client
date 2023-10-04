@@ -62,4 +62,14 @@ code {
   .close {
     right: 3rem !important;
   }
+
+  .bg {
+    background-color: #4A6360 !important;
+    background-position: center !important;
+    background-size: contain !important;
+  }
+
+  .bg-child {
+    width: 70% !important;
+  }
 }

@@ -3,10 +3,11 @@ import Anillo from "../../style/assets/Anillo";
 import CountdownTimer from "../../style/assets/CountDown";
 import Liston from "../../style/assets/Liston";
 import Corazon from "../../style/assets/Corazon";
-import { Container } from "../../style/Container";
+import { Container, SideVector } from "../../style/Container";
 import { Text } from "../../style/Text";
 import { Button } from "../../style/Buttons";
 import { apiCalendar } from "../../config/calendar";
+import FlorAlta from "../../style/assets/FlorAlta";
 
 export default function TwoPage({ change, error }) {
   const data = [
@@ -64,6 +65,7 @@ export default function TwoPage({ change, error }) {
       radius="2rem 2rem 0 0"
       gap="1rem"
       position="relative"
+      overflow="hidden"
       zIndex="3"
     >
       <CountdownTimer />
@@ -81,7 +83,7 @@ export default function TwoPage({ change, error }) {
                 {item.label}
               </Text>
               <Button
-                width="100%"
+                width="80%"
                 family="AlegreyaFont"
                 border="none"
                 radius="3rem"
@@ -114,6 +116,14 @@ export default function TwoPage({ change, error }) {
         </Container>
       </Container>
       <Corazon color="#C18559" />
+      <>
+        <SideVector bottom="0" right="-2.5rem">
+          <FlorAlta />
+        </SideVector>
+        <SideVector bottom="0" left="-2.5rem" transform="scaleX(-1)">
+          <FlorAlta />
+        </SideVector>
+      </>
     </Container>
   );
 }

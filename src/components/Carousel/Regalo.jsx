@@ -8,7 +8,7 @@ export default function Regalo({ change }) {
   return (
     <Container
       width="80%"
-      height="25rem"
+      height="20rem"
       bg="#fff"
       border="1px solid #ddd"
       radius="1rem"
@@ -21,7 +21,7 @@ export default function Regalo({ change }) {
         Queremos brindarle una gran noche y con su colaboración nos ayudarian a
         hacerlo posible
       </Text>
-      <Vector width="90" height="90" color="#4A6360" />
+      <Vector width="50" height="50" color="#4A6360" />
       <Button
         id="bebida"
         shadow="0px 4px 4px #00000040"

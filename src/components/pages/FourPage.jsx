@@ -13,19 +13,14 @@ export default function FourPage() {
 
   return (
     <Container
-      height="35vh"
-      justify="center"
+      height="100vh"
+      flex="column"
+      gap="2rem"
+      justify="flex-end"
       align="center"
-      bg="white"
-      radius="1rem 1rem 0rem 0rem"
+      bg="#FFCB9D"
     >
-      <img
-        src={pic}
-        style={{
-          height: "15rem",
-        }}
-      />
-      <Container flex="column" gap="1.75rem" align="flex-end">
+      <Container flex="column" gap="4rem" align="center">
         {links.map((title, idx) => (
           <>
             <a
@@ -36,9 +31,11 @@ export default function FourPage() {
               <Text
                 textWrap="nowrap"
                 weight="700"
-                size="1rem"
+                size="1.2rem"
                 family="AlegreyaFont"
-                color="#C18559"
+                color="white"
+                spacing="3px"
+                textShadow="0 2px 4px rgba(0, 0, 0, 0.5);"
               >
                 {title.text}
               </Text>
@@ -46,6 +43,12 @@ export default function FourPage() {
           </>
         ))}
       </Container>
+      <img
+        src={pic}
+        style={{
+          height: "20rem",
+        }}
+      />
     </Container>
   );
 }

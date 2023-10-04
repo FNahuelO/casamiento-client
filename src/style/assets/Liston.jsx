@@ -4,7 +4,7 @@ import { Text } from "../Text";
 
 export default function Liston({ text, size }) {
   return (
-    <Container position="relative" justify="center" align="center">
+    <Container position="relative" justify="center" align="center" index="3">
       <svg
         width="250"
         height="70"

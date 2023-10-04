@@ -1,7 +1,7 @@
 import React from "react";
 import { Container, SideVector } from "../../style/Container";
 import { Text, HR } from "../../style/Text";
-import picture from "../../style/assets/backgraound-1.png";
+import picture from "../../style/assets/fondo.jpg";
 import Comillas from "../../style/assets/Comillas";
 import Flor1 from "../../style/assets/Flor1";
 import Flor2 from "../../style/assets/Flor2";
@@ -11,16 +11,21 @@ export default function OnePage() {
     <Container
       bgImg={picture}
       bgAttachment="fixed"
-      positionX="70%"
       width="100%"
+      justify="center"
       height="100vh"
       bgSize="cover"
+      bgRepeat="no-repeat"
+      positionX="40%"
+      overflow="hidden"
+      position="relative"
+      className="bg"
     >
       <>
-        <SideVector left="0" bottom="1rem" direction="left">
+        <SideVector left="-2rem" bottom="1rem" direction="left">
           <Flor1 width="150" height="100" />
         </SideVector>
-        <SideVector right="0" top="0">
+        <SideVector right="0" top="0" transform="translateX(2rem)">
           <Flor2 width="150" height="100" />
         </SideVector>
       </>
@@ -30,6 +35,7 @@ export default function OnePage() {
         flex="column"
         justify="center"
         align="center"
+        className="bg-child"
         style={{ backgroundColor: "rgba(90, 59, 21, 0.4)" }}
       >
         <Container flex="column" width="80%" gap="4rem">

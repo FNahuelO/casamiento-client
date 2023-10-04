@@ -33,6 +33,7 @@ export default function ThreePage({ error }) {
       flex="column"
       gap="1rem"
       id="music"
+      shadow="0 4px 4px #00000040"
     >
       <Container flex="column" gap=".5rem">
         <Liston text="Fiesta" size="2.5rem" />
