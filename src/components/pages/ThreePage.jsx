@@ -19,15 +19,19 @@ export default function ThreePage({ error }) {
 
   useEffect(() => {
     // Habilitar o deshabilitar el scroll del cuerpo cuando se muestra o se cierra el modal
+    const html = document.documentElement;
     const body = document.body;
     if (view.state) {
+      html.style.overflow = "hidden";
       body.style.overflow = "hidden";
     } else {
+      html.style.overflow = "auto";
       body.style.overflow = "auto";
     }
 
     return () => {
       // Restaurar el scroll del cuerpo al desmontar el modal
+      html.style.overflow = "auto";
       body.style.overflow = "auto";
     };
   }, [view]);

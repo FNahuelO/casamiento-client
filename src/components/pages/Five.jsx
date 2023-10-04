@@ -11,15 +11,19 @@ export default function FivePage() {
 
   useEffect(() => {
     // Habilitar o deshabilitar el scroll del cuerpo cuando se muestra o se cierra el modal
+    const html = document.documentElement;
     const body = document.body;
     if (view) {
       body.style.overflow = "hidden";
+      html.style.overflow = "hidden";
     } else {
       body.style.overflow = "auto";
+      html.style.overflow = "auto";
     }
 
     return () => {
       // Restaurar el scroll del cuerpo al desmontar el modal
+      html.style.overflow = "auto";
       body.style.overflow = "auto";
     };
   }, [view]);
