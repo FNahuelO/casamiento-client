@@ -4,7 +4,7 @@ import { useDataStore } from "../../helpers/context";
 import { Button } from "../../style/Buttons";
 import { Container } from "../../style/Container";
 import { Text } from "../../style/Text";
-import VectorCheck from "../../style/assets/VectorCheck";
+import check from "../../style/assets/check.svg";
 import ButtonCheck from "../../style/assets/ButtonCheck";
 
 export default function Confirm() {
@@ -191,7 +191,7 @@ export default function Confirm() {
         gap="1rem"
         className="animate__animated animate__bounceIn"
       >
-        <VectorCheck color="#4A6360EB" />
+        <img src={check} style={{ width: "12rem" }} />
         <Text size="1.5rem" color="#4A6360">
           ¡Guardado con exito!
         </Text>

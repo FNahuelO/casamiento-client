@@ -10,4 +10,5 @@ export const MainModal = styled.div`
   background: rgb(0, 0, 0, 0.5);
   height: 100vh;
   width: 100%;
+  z-index: 5;
 `;

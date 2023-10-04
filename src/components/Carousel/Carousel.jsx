@@ -6,7 +6,7 @@ import Tips from "./Tips";
 import Musica from "./Musica";
 import { Wrapper } from "../../style/Container";
 
-export default function Carousel({ change, error }) {
+export default function Carousel({ change, error, container }) {
   const [currentIndex, setCurrentIndex] = useState(1);
   useEffect(() => {
     const handleHashChange = () => {
@@ -28,9 +28,9 @@ export default function Carousel({ change, error }) {
   }, []);
 
   const slides = [
-    <Bebida change={change} key="1" error={error} />,
-    <Tips change={change} key="2" />,
-    <Musica change={change} key="3" error={error} />,
+    <Bebida change={change} container={container} key="1" error={error} />,
+    <Tips change={change} container={container} key="2" />,
+    <Musica change={change} container={container} key="3" error={error} />,
   ];
 
   const handleChange = (value) => {

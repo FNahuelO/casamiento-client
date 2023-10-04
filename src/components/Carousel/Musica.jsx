@@ -5,7 +5,7 @@ import { Text } from "../../style/Text";
 import { Button } from "../../style/Buttons";
 import { useDataStore } from "../../helpers/context";
 
-export default function Musica({ change, error }) {
+export default function Musica({ change, error, container }) {
   const { datos } = useDataStore();
   const isDisabled = datos?.invitado?.assist;
 
@@ -13,6 +13,10 @@ export default function Musica({ change, error }) {
     if (!isDisabled) {
       error({ view: true, msg: "Debes confirmar la asistencia" });
     } else {
+      window.scrollTo({
+        top: container.current.offsetTop - 40,
+        behavior: "smooth",
+      });
       change({ state: true, type: "music" });
     }
   };

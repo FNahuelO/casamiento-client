@@ -30,6 +30,9 @@ function App() {
     } else if (Object.keys(datos).length === 3) {
       setStyle({ ...style, opacity: "1" });
     }
+    if (!Object.keys(datos).length) {
+      setStyle({ ...style, opacity: "0.5" });
+    }
   }, [datos]);
 
   const handleClick = () => {
@@ -84,7 +87,7 @@ function App() {
 
       <Five />
       <FourPage />
-     
+
       <FixedButton
         position="fixed"
         bottom="3rem"

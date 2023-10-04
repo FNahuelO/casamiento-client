@@ -4,7 +4,7 @@ import { Container } from "../../style/Container";
 import { Text } from "../../style/Text";
 import { Button } from "../../style/Buttons";
 
-export default function Regalo({ change }) {
+export default function Regalo({ change, container }) {
   return (
     <Container
       width="80%"
@@ -32,7 +32,13 @@ export default function Regalo({ change }) {
         width="65%"
         size="1rem"
         weight="700"
-        onClick={() => change(true)}
+        onClick={() => {
+          window.scrollTo({
+            top: container.current.offsetTop,
+            behavior: "smooth",
+          });
+          change(true);
+        }}
       >
         VER MÁS
       </Button>

@@ -3,7 +3,7 @@ import { searchYouTube } from "../../helpers/actions";
 import { useDataStore } from "../../helpers/context";
 import ButtonCheck from "../../style/assets/ButtonCheck";
 import VectorSearch from "../../style/assets/Search";
-import VectorCheck from "../../style/assets/VectorCheck";
+import check from "../../style/assets/check.svg";
 import X from "../../style/assets/X";
 import { Button, ButtonClose } from "../../style/Buttons";
 import { Container } from "../../style/Container";
@@ -156,7 +156,7 @@ export default function Playlist({ change }) {
         gap="2rem"
         className="animate__animated animate__bounceIn"
       >
-        <VectorCheck color="#4A6360EB" />
+       <img src={check} style={{ width: "12rem" }} />
         <Text size="1.5rem">¡Guardado con exito!</Text>
       </Container>
     ),

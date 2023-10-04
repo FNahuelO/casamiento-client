@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import Liston from "../../style/assets/Liston";
 import { Container, SideVector } from "../../style/Container";
 import Regalo from "../Carousel/Regalo";
@@ -9,6 +9,7 @@ import Flor3 from "../../style/assets/Flor3";
 
 export default function FivePage() {
   const [view, setView] = useState(false);
+  const containerRef = useRef(null);
   return (
     <Container
       height="100vh"
@@ -20,6 +21,7 @@ export default function FivePage() {
       gap="2rem"
       position="relative"
       overflow="hidden"
+      ref={containerRef}
     >
       <>
         <SideVector left="-2rem" top="0" direction="left">
@@ -52,7 +54,7 @@ export default function FivePage() {
         </SideVector> */}
 
       <Liston text="Regalos" size="2.5rem" />
-      <Regalo change={setView} />
+      <Regalo change={setView} container={containerRef} />
       {view && <Modal change={setView} />}
     </Container>
   );

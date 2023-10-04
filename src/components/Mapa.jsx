@@ -2,6 +2,7 @@ import React, { useState, useCallback } from "react";
 import { MoonLoader } from "react-spinners";
 import { GoogleMapsProvider } from "@ubilabs/google-maps-react-hooks";
 import MapMarkers from "./Marker";
+import { Container } from "../style/Container";
 
 const mapOptions = {
   zoom: 17,
@@ -30,13 +31,23 @@ const Mapa = () => {
     >
       <React.StrictMode>
         {loading ? (
-          <div
-            id="container"
-            ref={mapRef}
-            style={{ height: "80%", width: "95%" }}
+          <Container
+            width="80%"
+            height="70%"
+            align="center"
+            justify="center"
+            padding="1rem"
+            bg="white"
+            radius="1rem"
           >
-            <MapMarkers />
-          </div>
+            <div
+              id="container"
+              ref={mapRef}
+              style={{ height: "100%", width: "100%" }}
+            >
+              <MapMarkers />
+            </div>
+          </Container>
         ) : (
           <MoonLoader />
         )}

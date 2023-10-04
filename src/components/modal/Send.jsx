@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { MoonLoader } from "react-spinners";
 import { postInvitacion } from "../../helpers/actions";
 import { useDataStore } from "../../helpers/context";
 import ButtonCheck from "../../style/assets/ButtonCheck";
@@ -94,6 +95,7 @@ export default function Send({ datos, close }) {
         </Button>
       </>
     ),
+    loading: <MoonLoader />,
     confirm: (
       <Container
         position="relative"
@@ -109,6 +111,7 @@ export default function Send({ datos, close }) {
   };
 
   const handleSubmit = async () => {
+    setType("loading");
     const { success } = await postInvitacion(datos);
     if (success) {
       setType("confirm");
@@ -120,12 +123,13 @@ export default function Send({ datos, close }) {
     <MainModal>
       <Container
         position="relative"
-        width="75%"
+        width="85%"
         height={datos?.invitado?.assist === "false" ? "15rem" : "25rem"}
-        padding="3.5rem 2rem"
+        padding="3.5rem 1rem"
         bg="white"
         flex="column"
         align="center"
+        justify="center"
         gap="2rem"
         radius="1rem"
         textAlign="center"

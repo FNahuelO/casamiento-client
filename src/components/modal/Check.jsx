@@ -1,5 +1,5 @@
 import React from "react";
-import VectorCheck from "../../style/assets/VectorCheck";
+import check from "../../style/assets/check.svg";
 import { Container } from "../../style/Container";
 import { Text } from "../../style/Text";
 
@@ -16,7 +16,7 @@ export default function Check() {
       gap="1.5rem"
       className="animate__animated animate__bounceIn"
     >
-      <VectorCheck color="#4A6360EB" />
+      <img src={check} style={{ width: "12rem" }} />
       <Text size="1.5rem" color="#4A6360">
         ¡Guardado con exito!
       </Text>

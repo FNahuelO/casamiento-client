@@ -4,7 +4,7 @@ import { Container } from "../../style/Container";
 import { Text } from "../../style/Text";
 import { Button } from "../../style/Buttons";
 
-export default function Tips({ change }) {
+export default function Tips({ change, container }) {
   return (
     <Container
       width="80%"
@@ -34,7 +34,13 @@ export default function Tips({ change }) {
         width="65%"
         size="1rem"
         weight="700"
-        onClick={() => change({ state: true, type: "tips" })}
+        onClick={() => {
+          window.scrollTo({
+            top: container.current.offsetTop - 40,
+            behavior: "smooth",
+          });
+          change({ state: true, type: "tips" });
+        }}
       >
         + INFO
       </Button>

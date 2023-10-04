@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { fetchBebidas } from "../../helpers";
 import Liston from "../../style/assets/Liston";
 import { Container } from "../../style/Container";
@@ -11,6 +11,7 @@ import Playlist from "../modal/Playlist";
 export default function ThreePage({ error }) {
   const [view, setView] = useState({ state: false, type: null });
   const [datos, setDatos] = useState(null);
+  const containerRef = useRef(null);
 
   useEffect(() => {
     fetchBebidas().then((data) => setDatos(data));
@@ -34,6 +35,7 @@ export default function ThreePage({ error }) {
       gap="1rem"
       id="music"
       shadow="0 4px 4px #00000040"
+      ref={containerRef}
     >
       <Container flex="column" gap=".5rem">
         <Liston text="Fiesta" size="2.5rem" />
@@ -41,7 +43,7 @@ export default function ThreePage({ error }) {
           AQUI UNOS DETALLES A TENER EN CUENTA
         </Text>
       </Container>
-      <Carousel change={setView} error={error} />
+      <Carousel change={setView} error={error} container={containerRef} />
       {view.state && components[view?.type]}
     </Container>
   );

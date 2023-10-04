@@ -5,14 +5,19 @@ import { Text } from "../../style/Text";
 import { Button } from "../../style/Buttons";
 import { useDataStore } from "../../helpers/context";
 
-export default function Bebida({ change, error }) {
+export default function Bebida({ change, error, container }) {
   const { datos } = useDataStore();
   const isDisabled = datos?.invitado?.assist;
 
+  console.log(container);
   const handleClick = () => {
     if (!isDisabled) {
       error({ view: true, msg: "Debes confirmar la asistencia" });
     } else {
+      window.scrollTo({
+        top: container.current.offsetTop - 40,
+        behavior: "smooth",
+      });
       change({ state: true, type: "drink" });
     }
   };
