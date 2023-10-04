@@ -1,10 +1,12 @@
 import React from "react";
 import { Container, SideVector } from "../../style/Container";
+import { Button } from "../../style/Buttons";
 import { Text, HR } from "../../style/Text";
 import picture from "../../style/assets/fondo.jpg";
 import Comillas from "../../style/assets/Comillas";
 import Flor1 from "../../style/assets/Flor1";
 import Flor2 from "../../style/assets/Flor2";
+import down from "../../style/assets/down.svg";
 
 export default function OnePage() {
   return (
@@ -84,6 +86,26 @@ export default function OnePage() {
             <Comillas />
           </Container>
         </Container>
+        <Button
+          bg="none"
+          border="none"
+          position="absolute"
+          bottom="0.5rem"
+          left="50%"
+          transform="translate(-50%,-50%)"
+          onClick={() => {
+            window.scrollTo({
+              top: 700,
+              behavior: "smooth",
+            });
+          }}
+        >
+          <img
+            src={down}
+            style={{ width: "3.5rem" }}
+            className="animate__animated animate__bounce"
+          />
+        </Button>
       </Container>
     </Container>
   );
