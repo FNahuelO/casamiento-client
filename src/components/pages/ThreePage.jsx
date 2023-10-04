@@ -17,6 +17,21 @@ export default function ThreePage({ error }) {
     fetchBebidas().then((data) => setDatos(data));
   }, []);
 
+  useEffect(() => {
+    // Habilitar o deshabilitar el scroll del cuerpo cuando se muestra o se cierra el modal
+    const body = document.body;
+    if (view.state) {
+      body.style.overflow = "hidden";
+    } else {
+      body.style.overflow = "auto";
+    }
+
+    return () => {
+      // Restaurar el scroll del cuerpo al desmontar el modal
+      body.style.overflow = "auto";
+    };
+  }, [view]);
+
   const components = {
     drink: <Bebidas change={setView} bebidas={datos} />,
     tips: <Tips change={setView} />,

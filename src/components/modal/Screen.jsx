@@ -29,6 +29,7 @@ export default function Screen({ state, change, datos }) {
       flex="column"
       justify="center"
       align="center"
+      index="5"
     >
       <Button
         position="absolute"

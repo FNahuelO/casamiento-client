@@ -1,15 +1,28 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Liston from "../../style/assets/Liston";
 import { Container, SideVector } from "../../style/Container";
 import Regalo from "../Carousel/Regalo";
 import Modal from "../modal/Regalo";
-/* import Flor1 from "../../style/assets/Flor1";
-import Flor2 from "../../style/assets/Flor2"; */
 import Flor3 from "../../style/assets/Flor3";
 
 export default function FivePage() {
   const [view, setView] = useState(false);
   const containerRef = useRef(null);
+
+  useEffect(() => {
+    // Habilitar o deshabilitar el scroll del cuerpo cuando se muestra o se cierra el modal
+    const body = document.body;
+    if (view) {
+      body.style.overflow = "hidden";
+    } else {
+      body.style.overflow = "auto";
+    }
+
+    return () => {
+      // Restaurar el scroll del cuerpo al desmontar el modal
+      body.style.overflow = "auto";
+    };
+  }, [view]);
   return (
     <Container
       height="100vh"
@@ -48,11 +61,6 @@ export default function FivePage() {
           <Flor3 width="150" height="100" />
         </SideVector>
       </>
-      {/*  
-        <SideVector right="0" top="0">
-          <Flor1 width="150" height="100" />
-        </SideVector> */}
-
       <Liston text="Regalos" size="2.5rem" />
       <Regalo change={setView} container={containerRef} />
       {view && <Modal change={setView} />}
