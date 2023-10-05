@@ -39,7 +39,7 @@ export default function OnePage() {
         className="bg-child"
         style={{ backgroundColor: "rgba(90, 59, 21, 0.4)" }}
       >
-        <Container flex="column" width="80%" gap="4rem">
+        <Container flex="column" width="80%" gap="1rem">
           <Container flex="column" justify="center" align="center" gap="2rem">
             <Container width="100%" align="center" justify="space-around">
               <HR margin="0" border="1px solid white" width="20%" />
