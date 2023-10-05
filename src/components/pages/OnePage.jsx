@@ -49,24 +49,24 @@ export default function OnePage() {
               <HR margin="0" border="1px solid white" width="20%" />
             </Container>
             <Container gap="1rem" color="white" align="center">
-              <Text size="4rem" color="white" family="MontezFont, sans-serif">
+              <Text size="3.5rem" color="white" family="MontezFont, sans-serif">
                 Cris
               </Text>
               <Text
                 display="flex"
                 alignItems="center"
                 justify="center"
-                size="4rem"
+                size="3.5rem"
                 color="white"
                 bg="#D28A58"
                 radius="50%"
-                width="4rem"
-                height="4rem"
+                width="3.5rem"
+                height="3.5rem"
                 family="UpdockFont"
               >
                 &
               </Text>
-              <Text size="4rem" color="white" family="MontezFont, sans-serif">
+              <Text size="3.5rem" color="white" family="MontezFont, sans-serif">
                 Flor
               </Text>
             </Container>
