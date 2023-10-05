@@ -90,9 +90,10 @@ export default function OnePage() {
           bg="none"
           border="none"
           position="absolute"
-          bottom="0.5rem"
+          bottom="-2rem"
           left="50%"
           transform="translate(-50%,-50%)"
+          index="10"
           onClick={() => {
             window.scrollTo({
               top: 700,
