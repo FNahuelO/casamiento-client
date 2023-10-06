@@ -17,7 +17,7 @@ export default function OnePage() {
       height="100vh"
       bgSize="cover"
       bgRepeat="no-repeat"
-      positionX="40%"
+      bgPosition="center"
       overflow="hidden"
       position="relative"
       className="bg"
@@ -103,7 +103,7 @@ export default function OnePage() {
         >
           <img
             src={down}
-            style={{ width: "3.5rem" }}
+            style={{ width: "3.5rem", color: "black" }}
             className="animate__animated animate__bounce"
           />
         </Button>
