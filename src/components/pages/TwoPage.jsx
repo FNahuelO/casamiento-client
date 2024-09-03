@@ -30,11 +30,11 @@ export default function TwoPage({ change, error }) {
     const event = {
       summary: "Casamiento Cris & Flor",
       start: {
-        dateTime: new Date("2023-11-18T21:00:00Z").toISOString(),
+        dateTime: new Date("2024-11-18T21:00:00Z").toISOString(),
         timeZone: "America/Buenos_Aires",
       },
       end: {
-        dateTime: new Date("2023-11-19T08:00:00Z").toISOString(),
+        dateTime: new Date("2024-11-19T08:00:00Z").toISOString(),
         timeZone: "America/Buenos_Aires",
       },
     };

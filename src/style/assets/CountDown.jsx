@@ -6,7 +6,7 @@ import vector from "./flores.svg";
 
 const CountdownTimer = () => {
   const calculateTimeLeft = () => {
-    const difference = new Date("2023-11-18") - new Date();
+    const difference = new Date("2024-11-18") - new Date();
     let timeLeft = {};
 
     if (difference > 0) {
