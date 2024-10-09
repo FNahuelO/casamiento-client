@@ -10,6 +10,7 @@ import { useDataStore } from "../helpers/context";
 import ErrorModal from "./modal/Error";
 import { FixedButton } from "../style/Buttons";
 import Send from "./modal/Send";
+import BackgroundMusic from "./Music";
 
 function App() {
   const [view, setView] = useState({ view: false });
@@ -80,6 +81,7 @@ function App() {
 
   return (
     <React.Fragment>
+      <BackgroundMusic />
       <OnePage />
       <TwoPage change={setView} error={setError} />
 
